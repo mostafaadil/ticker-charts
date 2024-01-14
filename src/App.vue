@@ -9,6 +9,8 @@ export default {
 }
 </script>
 <style>
-
+table{
+  padding: 10px;
+}
 </style>
 

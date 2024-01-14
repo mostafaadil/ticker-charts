@@ -75,7 +75,8 @@
             </div>
             <div class="mb-1 mb-sm-3">
               <label class="form-label">الدور</label>
-              <select class="form-select" v-model="userData.role">
+              <select class="form-select" 
+              >
                 <option value="user">مستخدم</option>
                 <option value="admin">أدمن</option>
               </select>

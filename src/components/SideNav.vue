@@ -17,7 +17,7 @@
         <use xlink:href="#bootstrap"></use>
       </svg>
       <span class="fs-5 fw-semibold">لوحة التحكم</span>
-      <small>مرحبا {{   $store.state.userData ? $store.state.userData.user : '' }}</small>
+      <small>مرحبا {{ $store.state.userData ? $store.state.userData.user : '' }}</small>
     </a>
     <ul class="list-unstyled ps-0">
       <slot></slot>
@@ -36,6 +36,8 @@ export default {
   width: 180px;
   text-align: right;
   height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 #side-nav li.mb-1 {
@@ -52,4 +54,5 @@ export default {
   #side-nav button {
     font-size: 14px;
   }
-}</style>
+}
+</style>

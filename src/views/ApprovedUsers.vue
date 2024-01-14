@@ -139,9 +139,10 @@ export default {
       //   }).catch(console.error)
     },
     makeExcl() {
+      this.data=[]
       for (let i = 0; i < this.users.length; i++) {
-        
-        this.data.push({ name: this.users[i].name, user: this.users[i].user, tel: this.users[i].tel, email: this.users[i].email,duration:this.users[i].duration,join_date: this.users[i].created.split('T')[0],finished_date:this.users[i]?.finished_date?.split('T')[0]});
+
+        this.data.push({ name: this.users[i].name, user: this.users[i].user, tel: this.users[i].tel, email: this.users[i].email, duration: this.users[i].duration, join_date: this.users[i].created.split('T')[0], finished_date: this.users[i]?.finished_date?.split('T')[0] });
 
       }
 
@@ -164,8 +165,8 @@ export default {
     },
     editUserPass() {
       this.axios.post(this.$store.state.url + "updateUserPass", {
-        pass:this.userData.pass,
-        id:this.userData.id
+        pass: this.userData.pass,
+        id: this.userData.id
       })
         .then(resp => {
           if (resp.data.status) {

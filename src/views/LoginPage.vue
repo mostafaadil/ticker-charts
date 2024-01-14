@@ -42,8 +42,8 @@ export default {
   },
   methods: {
     doLogin() {
-      // this.loginData.socket_id = "this.$store.state.socket_id"
       // alert(this.loginData)
+     
       this.axios.post(this.$store.state.url + "login", this.loginData)
         .then(resp => {
           if (resp.data.status) {
@@ -51,8 +51,12 @@ export default {
             localStorage["userData"] = JSON.stringify(this.loginData)
             this.$store.state.auth = true
             this.$store.state.userData = resp.data.data
+            this.socket_id=resp.data.code
+            this.$store.state.userData.socket_id = this.socket_id
             this.$store.state.UserId = resp.data.data.id
             this.initSocket()
+            this.loginData.socket_id = this.$store.state.socket_id
+
             if (resp.data.data.role == 'admin') {
               this.$store.state.user_role = "admin"
               this.$router.push("/admin/chart")

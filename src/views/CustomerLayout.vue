@@ -25,7 +25,7 @@
         </div>
       </li>
     </side-nav>
-    <div style="flex: 1;overflow-x: auto">
+    <div style="flex: 1;">
       <router-view></router-view>
     </div>
   </div>
@@ -45,7 +45,7 @@ export default {
     console.log(111)
     if (!this.$store.state.auth) this.$router.push("/login")
     else {
-      this.initSocket()
+      // this.initSocket()
     }
   }
 }

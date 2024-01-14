@@ -23,6 +23,13 @@
           <input required type="tel" class="form-control" v-model="userData.tel">
         </div>
         <div class="mb-1 mb-sm-3">
+          <label class="form-label">الدور</label>
+          <select class="form-select" v-model="userData.role">
+            <option value="user" >مستخدم</option>
+            <option value="admin" selected>أدمن</option>
+          </select>
+        </div>
+        <div class="mb-1 mb-sm-3"  v-if="userData.role == 'user'">
           <label class="form-label">مدة الأشتراك</label>
           <select class="form-select" v-model="userData.duration">
             <option value="3">ثلاثة اشهر</option>
@@ -31,14 +38,8 @@
             <option value="12">سنة</option>
           </select>
         </div>
-        <div class="mb-1 mb-sm-3">
-          <label class="form-label">الدور</label>
-          <select class="form-select" v-model="userData.role">
-            <option value="user">مستخدم</option>
-            <option value="admin">أدمن</option>
-          </select>
-        </div>
-        <div class="form-group">
+
+        <div class="form-group" v-if="userData.role == 'user'">
           <file-input class="my-4" label="ارفق إيصال الدفع " v-model="userData.doc">
             <label for="file"></label>
           </file-input>

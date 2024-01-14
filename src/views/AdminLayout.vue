@@ -19,14 +19,14 @@
         <button class="btn btn-toggle align-items-center rounded"  aria-expanded="true">
           السوق
         </button>
-        <div class="dashboard-collapse">
+        <div class="" id="dashboard-collapse1">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><router-link to="/admin/chart" class="link-dark rounded">المنصة</router-link></li>
           </ul>
         </div>
       </li>
     </side-nav>
-    <div style="flex: 1;overflow-x: auto" >
+    <div style="flex: 1;" >
       <router-view></router-view>
     </div>
   </div>

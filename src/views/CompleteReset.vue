@@ -50,7 +50,7 @@ export default {
         pass:this.resetData.pass
       })
           .then(resp => {
-            if(resp){
+            if(resp.status){
               alert("نجحت العملية. يمكنك تسجيل الدخول بكلمة الجديدة الان")
               this.$router.push("/login")
             }

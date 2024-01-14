@@ -118,6 +118,10 @@ export default {
         .then(resp => {
           if (resp.data.status) {
             alert("تم التسجيل الرجاء انتظار الموافقة على الطلب")
+            this.axios.get("https://radarna.com/email.php?email="+this.registerData.email).then((res)=>{
+              console.log(res)
+              console.log("register");
+            })
           }
           else {
             this.registerData = {}
